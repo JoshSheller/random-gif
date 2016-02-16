@@ -7,9 +7,12 @@
   	<script type='text/javascript' src='angular.min.js'></script>
   	<script type='text/javascript' src='app.js'></script>
 
-  	<div ng-controller="findGiphy">
-  		<input ng-value="" />
-  		<button ng-click="searchGiphyByName()">BUTTON</button>
+  	<div ng-controller="searchGiphy">
+  		<input type="text" ng-model="key1" ng-init="searchGifs('funny cat')"/>
+  		<div>
+  			{{ asdf }}
+      </div>
+  		<button ng-click="searchGifs(key1)">BUTTON</button>
   		<div ng-repeat="d in data">
   		  <div ng-repeat="giph in d">
   		  	<!-- {{ giph.images.fixed_height.url }} -->
@@ -17,6 +20,34 @@
   		  </div>
   		</div>
   	</div>
+
+    <div ng-controller="searchGiphy">
+      <input type="text" ng-model="key1" ng-init="searchGifs('funny cat')"/>
+      <div>
+        {{ asdf }}
+      </div>
+      <button ng-click="searchGifs(key1)">BUTTON</button>
+      <div ng-repeat="d in data">
+        <div ng-repeat="gif in d">
+          <!-- {{ giph.images.fixed_height.url }} -->
+          <image ng-src="{{ gif.images.fixed_height.url }}">
+        </div>
+      </div>
+    </div>
+
+    <div ng-controller="searchGiphy">
+      <input type="text" ng-model="key1" ng-init="searchGifs('funny cat')"/>
+      <div>
+        {{ asdf }}
+      </div>
+      <button ng-click="searchGifs(key1)">BUTTON</button>
+      <div ng-repeat="d in data">
+        <div ng-repeat="gif in d">
+          <!-- {{ giph.images.fixed_height.url }} -->
+          <image ng-src="{{ gif.images.fixed_height.url }}">
+        </div>
+      </div>
+    </div>
 
   </body>
 </html>
