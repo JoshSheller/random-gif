@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html ng-app='giphy'>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>Find mo gifs</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
   	<script type='text/javascript' src='angular.min.js'></script>
   	<script type='text/javascript' src='app.js'></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 
-  	<div ng-controller="searchGiphy">
+<div class="container-fluid">
+
+  <div class="row">
+
+  	<div ng-controller="searchGiphy" class="col-md-4">
   		<input type="text" ng-model="key1" ng-init="searchGifs('funny cat')"/>
-  		<div>
-  			{{ asdf }}
-      </div>
-  		<button ng-click="searchGifs(key1)">BUTTON</button>
+  		<button ng-click="searchGifs(key1)">MOAR GIF MEOW</button>
   		<div ng-repeat="d in data">
   		  <div ng-repeat="giph in d">
   		  	<!-- {{ giph.images.fixed_height.url }} -->
   		  	<image ng-src="{{ giph.images.fixed_height.url }}">
   		  </div>
   		</div>
-  	</div>
+   </div>
 
-    <div ng-controller="searchGiphy">
+    <div ng-controller="searchGiphy" class="col-md-4">
       <input type="text" ng-model="key1" ng-init="searchGifs('funny cat')"/>
-      <div>
-        {{ asdf }}
-      </div>
-      <button ng-click="searchGifs(key1)">BUTTON</button>
+      <button ng-click="searchGifs(key1)">MOAR GIF MEOW</button>
       <div ng-repeat="d in data">
         <div ng-repeat="gif in d">
           <!-- {{ giph.images.fixed_height.url }} -->
@@ -35,12 +43,9 @@
       </div>
     </div>
 
-    <div ng-controller="searchGiphy">
+    <div ng-controller="searchGiphy" class="col-md-4">
       <input type="text" ng-model="key1" ng-init="searchGifs('funny cat')"/>
-      <div>
-        {{ asdf }}
-      </div>
-      <button ng-click="searchGifs(key1)">BUTTON</button>
+      <button ng-click="searchGifs(key1)">MOAR GIF MEOW</button>
       <div ng-repeat="d in data">
         <div ng-repeat="gif in d">
           <!-- {{ giph.images.fixed_height.url }} -->
@@ -48,6 +53,14 @@
         </div>
       </div>
     </div>
+
+ </div>
+</div>
 
   </body>
 </html>
+
+
+
+
+
