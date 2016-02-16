@@ -10,7 +10,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/app.css" rel="stylesheet">
   </head>
-  <body>
+  <body id="rainbow">
   	<script type='text/javascript' src='angular.min.js'></script>
   	<script type='text/javascript' src='app.js'></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -20,37 +20,43 @@
 
 <div class="container-fluid">
 
-  <div class="row">
+  <div class="row image-columns">
 
   	<div ng-controller="searchGiphy" class="col-md-4">
-  		<input type="text" ng-model="key1" ng-init="searchGifs('funny cat')"/>
-  		<button ng-click="searchGifs(key1)">MOAR GIF MEOW</button>
+      <div class="search">
+  		  <input type="text" ng-model="key1" ng-init="searchGifs('funny cat')"/>
+  		  <button ng-click="searchGifs(key1)">MOAR GIF MEOW</button>
+      </div>
   		<div ng-repeat="d in data">
   		  <div ng-repeat="giph in d">
   		  	<!-- {{ giph.images.fixed_height.url }} -->
-  		  	<image ng-src="{{ giph.images.fixed_height.url }}" class="img-center">
+  		  	<image ng-src="{{ giph.images.fixed_height.url }}" class="horizontal-center">
   		  </div>
   		</div>
    </div>
 
     <div ng-controller="searchGiphy" class="col-md-4">
-      <input type="text" ng-model="key1" ng-init="searchGifs('funny cat')"/>
-      <button ng-click="searchGifs(key1)">GIMME MO GIF</button>
+      <div class="search">
+        <input type="text" ng-model="key1" ng-init="searchGifs('sloth')"/>
+        <button ng-click="searchGifs(key1)">GIMME MO GIF</button>
+      </div>
       <div ng-repeat="d in data">
         <div ng-repeat="gif in d">
           <!-- {{ giph.images.fixed_height.url }} -->
-          <image ng-src="{{ gif.images.fixed_height.url }}" class="img-center">
+          <image ng-src="{{ gif.images.fixed_height.url }}" class="horizontal-center">
         </div>
       </div>
     </div>
 
     <div ng-controller="searchGiphy" class="col-md-4">
-      <input type="text" ng-model="key1" ng-init="searchGifs('funny cat')"/>
-      <button ng-click="searchGifs(key1)">Gif me baby one more time</button>
+      <div class="search">
+        <input type="text" ng-model="key1" ng-init="searchGifs('asdf')"/>
+        <button ng-click="searchGifs(key1)">Gif me baby one more time</button>
+      </div>
       <div ng-repeat="d in data">
         <div ng-repeat="gif in d">
           <!-- {{ giph.images.fixed_height.url }} -->
-          <image ng-src="{{ gif.images.fixed_height.url }}" class="img-center">
+          <image ng-src="{{ gif.images.fixed_height.url }}" class="horizontal-center">
         </div>
       </div>
     </div>
