@@ -18,9 +18,10 @@ body {
         color-stop(100%, rgba(255, 0, 0, 1)));
 }
 
-.image-columns input {
+.image-columns input, button {
   margin-top: 20px;
   margin-bottom: 20px;
+  -webkit-border-radius: 15px
 }
 
 .image-columns img {
@@ -30,6 +31,7 @@ body {
   padding-top: 4px;
   padding-bottom: 4px;
   max-width: 100%;
+  -webkit-border-radius: 15px;
 }
 
 .image-columns {

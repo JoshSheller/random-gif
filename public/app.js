@@ -13,10 +13,25 @@ app.factory('giphyAPI', function($http) {
   };
 });
 
+// app.factory('favorites', function() {
+//   var addToFavs = function(fav) {
+//     $scope.favs.push(fav);
+//   };
+
+//   return {
+//     addToFavs : addToFavs
+//   };
+// });
+
 app.controller('searchGiphy', function($scope, giphyAPI) {
+  $scope.favs = [];
   $scope.searchGifs = function(keyword) {
     giphyAPI.collectGiphy(keyword).then(function(data){
       $scope.data = data;
     });
+  }
+  $scope.addFav = function(url) {
+    $scope.favs.push(url);
+    console.log($scope.favs);
   }
 });
