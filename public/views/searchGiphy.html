@@ -1,0 +1,54 @@
+<div class="container-fluid">
+
+  <div class="row image-columns">
+
+    <div ng-controller="searchGiphy" class="col-md-4">
+      <div class="search">
+        <input type="text" ng-model="keyword" ng-init="searchGifs('funny cat')"/>
+        <button ng-click="searchGifs(keyword)">MOAR GIF NOW</button>
+      </div>
+      <div ng-repeat="fav in favs">
+        <image ng-src="{{ fav }}">
+      </div>
+      <div ng-repeat="d in data">
+        <div ng-repeat="gif in d">
+          <!-- {{ giph.images.fixed_height.url }} -->
+          <image ng-src="{{ gif.images.fixed_height.url }}" ng-click="addFav(gif.images.fixed_height.url)" class="horizontal-center">
+        </div>
+      </div>
+    </div>
+
+    <div ng-controller="searchGiphy" class="col-md-4">
+      <div class="search">
+        <input type="text" ng-model="keyword" ng-init="searchGifs('sloth')"/>
+        <button ng-click="searchGifs(keyword)">GIMME MO GIF</button>
+      </div>
+      <div ng-repeat="fav in favs">
+        <image ng-src="{{ fav }}">
+      </div>
+      <div ng-repeat="d in data">
+        <div ng-repeat="gif in d">
+          <!-- {{ giph.images.fixed_height.url }} -->
+          <image ng-src="{{ gif.images.fixed_height.url }}" ng-click="addFav(gif.images.fixed_height.url)" class="horizontal-center">
+        </div>
+      </div>
+    </div>
+
+    <div ng-controller="searchGiphy" class="col-md-4">
+      <div class="search">
+        <input type="text" ng-model="keyword" ng-init="searchGifs('asdf')"/>
+        <button ng-click="searchGifs(keyword)">GIF ME BABY ONE MORE TIME</button>
+      </div>
+      <div ng-repeat="fav in favs">
+        <image ng-src="{{ fav }}">
+      </div>
+      <div ng-repeat="d in data">
+        <div ng-repeat="gif in d">
+          <!-- {{ giph.images.fixed_height.url }} -->
+          <image ng-src="{{ gif.images.fixed_height.url }}" ng-click="addFav(gif.images.fixed_height.url)" class="horizontal-center">
+        </div>
+      </div>
+    </div>
+
+ </div>
+</div>
