@@ -2,9 +2,14 @@ var app = angular.module('giphy', []);
 
 app.factory('giphyAPI', function($http) {
   var collectGiphy = function(keyword) {
-    return $http.get('http://api.giphy.com/v1/gifs/search?q=' + keyword + '&api_key=dc6zaTOxFJmzC')
-    .then(function(res) {
-      return res.data;
+    console.log('im inside collectGiphy');
+    return $http({
+      url: '/search',
+      method: 'GET',
+      params: {keyword: keyword}
+    }).then(function(gifs) {
+      console.log('gifs', gifs.data);
+      return gifs.data;
     });
   };
 
@@ -25,11 +30,14 @@ app.factory('giphyAPI', function($http) {
 
 app.controller('searchGiphy', function($scope, giphyAPI) {
   $scope.favs = [];
+
   $scope.searchGifs = function(keyword) {
     giphyAPI.collectGiphy(keyword).then(function(data){
+      console.log('controller data', data);
       $scope.data = data;
     });
   }
+
   $scope.addFav = function(url) {
     $scope.favs.push(url);
     console.log($scope.favs);
